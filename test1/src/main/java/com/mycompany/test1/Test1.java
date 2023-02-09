@@ -5,13 +5,28 @@
 
 package com.mycompany.test1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import javax.security.auth.kerberos.EncryptionKey;
+
 /**
  *
  * @author w20017074
  */
 public class Test1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Hello World!");
+        try
+        {
+            BufferedReader cons=new BufferedReader(new InputStreamReader(System.in)); 
+            System.out.println("Enter the size of the student group:");
+            int numStudents = Integer.parseInt(cons.readLine());
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 }
